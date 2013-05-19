@@ -1,6 +1,6 @@
 <?php
-$lang['adb']                              = "Es konnte keine Verbindung zur Account Datenbank hergestellt werden.";
-$lang['db']                               = "Es konnte keine Verbindung zur Website Datenbank hergestellt werden.";
+$adb['adb']                              = "Es konnte keine Verbindung zur Account Datenbank hergestellt werden.";
+$db['db']                               = "Es konnte keine Verbindung zur Website Datenbank hergestellt werden.";
 $home['home']                             = "Home";
 $status['status']                         = "Status";
 $Community['Community']                   = "Community";

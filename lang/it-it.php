@@ -1,6 +1,6 @@
 <?php
-$lang['adb'] = "Errore di connessione al database account.";
-$lang['db'] = "Errore di connessione al database del sito.";
+$db['adb'] = "Errore di connessione al database account.";
+$adb['db'] = "Errore di connessione al database del sito.";
 $home['home'] = "Home";
 $status['status'] = "Stato";
 $Community['Community'] = "comunità";

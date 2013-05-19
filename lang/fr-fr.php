@@ -2,8 +2,8 @@
 /* Please, use the html code for the special character.
 For this lang, use : &egrave; (grave accent) ; &eacute; (acute accent) ; &ecirc; (circumflex accent) ; &aacute; (a with accent). */
 
-$lang['adb'] = "Erreur de connexion &agrave; la base de donn&eacute;e des comptes.";
-$lang['db'] = "Erreur de connexion &agrave; la base de donn&eacute;e du site.";
+$adb['adb'] = "Erreur de connexion &agrave; la base de donn&eacute;e des comptes.";
+$db['db'] = "Erreur de connexion &agrave; la base de donn&eacute;e du site.";
 $home['home'] = "Accueil";
 $status['status'] = "Etat";
 $Community['Community'] = "Communaut&eacute;e";

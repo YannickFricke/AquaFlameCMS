@@ -1,6 +1,6 @@
 <?php
-$lang['adb'] = "Could not connect to Account Database.";
-$lang['db'] = "Could not connect to Website Database.";
+$adb['adb'] = "Could not connect to Account Database.";
+$db['db'] = "Could not connect to Website Database.";
 $home['home'] = "home";
 $status['status'] = "Status";
 $Community['Community'] = "Community";

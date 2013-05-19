@@ -1,7 +1,7 @@
 <?php
 // Needs to be Completed.
-$lang['adb'] = "&Delta;&epsilon;&nu; &eta;&tau;&alpha;&nu; &delta;&upsilon;&nu;&alpha;&tau;&eta; &eta; &sigma;&upsilon;&nu;&delta;&epsilon;&sigma;&eta; &sigma;&tau;&eta;&nu; Account Database.";
-$lang['db'] = "&Delta;&epsilon;&nu; &eta;&tau;&alpha;&nu; &delta;&upsilon;&nu;&alpha;&tau;&eta; &eta; &sigma;&upsilon;&nu;&delta;&epsilon;&sigma;&eta; &sigma;&tau;&eta;&nu; Website Database.";
+$adb['adb'] = "&Delta;&epsilon;&nu; &eta;&tau;&alpha;&nu; &delta;&upsilon;&nu;&alpha;&tau;&eta; &eta; &sigma;&upsilon;&nu;&delta;&epsilon;&sigma;&eta; &sigma;&tau;&eta;&nu; Account Database.";
+$db['db'] = "&Delta;&epsilon;&nu; &eta;&tau;&alpha;&nu; &delta;&upsilon;&nu;&alpha;&tau;&eta; &eta; &sigma;&upsilon;&nu;&delta;&epsilon;&sigma;&eta; &sigma;&tau;&eta;&nu; Website Database.";
 $home['home'] = "&Alpha;&rho;&chi;&iota;&kappa;&eta;";
 $status['status'] = "&Kappa;&alpha;&tau;&alpha;&sigma;&tau;&alpha;&sigma;&eta;";
 $Community['Community'] = "&Kappa;&Omicron;&Iota;&Nu;&Omega;&Tau;&Eta;&Tau;&Alpha;";
