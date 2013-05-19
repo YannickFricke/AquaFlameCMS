@@ -1,7 +1,7 @@
 <?php
 // Needs to be Translated
-$lang['adb'] = "Imposible conectar con la base de datos de las cuentas.";
-$lang['db'] = "Imposible conectar con la base de datos de la web..";
+$adb['adb'] = "Imposible conectar con la base de datos de las cuentas.";
+$db['db'] = "Imposible conectar con la base de datos de la web..";
 $home['home'] = "Inicio";
 $status['status'] = "Estado";
 $Community['Community'] = "Comunidad";
