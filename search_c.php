@@ -118,7 +118,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
                     echo '<tbody>';
                       while ($row = mysql_fetch_array($result)) {        //Echo list of characters
                         echo '<tr class="row1">
-                        	<td><a href="" class="item-link color-c9"><span class="icon-frame frame-18"><img src="images/postavatar.jpg" alt="" width="18" height="18" /></span><strong><a href="threed.php?name='.$row["name"].'">'.$row["name"].'</a></strong></a></td>
+                        	<td><a href="" class="item-link color-c9"><span class="icon-frame frame-18"><img src="images/postavatar.jpg" alt="" width="18" height="18" /></span><strong><a href="advanced.php?name='.$row["name"].'">'.$row["name"].'</a></strong></a></td>
                          	<td class="align-center">'.$row["level"].'</td>
                         	<td class="align-center"><span class="icon-frame frame-14 " data-tooltip="'.$row['race'].'"><img src="wow/static/images/icons/race/'.$row['race'].'-'.$row['gender'].'.gif" alt="" width="14" height="14" /></span></td>
                         	<td class="align-center"><span class="icon-frame frame-14 " data-tooltip=""><img src="wow/static/images/icons/class/'.$row["class"].'.gif" alt="" width="14" height="14" /></span></td>
