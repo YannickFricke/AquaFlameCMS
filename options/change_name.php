@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
 <head>
-<title><?php echo $website['title']; ?> - Change Character Name</title>
+<title><?php echo $website['title']; ?><?php echo $name['1']; ?></title>
 <meta content="false" http-equiv="imagetoolbar" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <link rel="shortcut icon" href="../wow/static/local-common/images/favicons/wow.png" type="image/x-icon" />
@@ -78,7 +78,7 @@ _gaq.push(['_trackPageLoadTime']);
 <div id="content">
 <div id="page-header">
 <span class="float-right"><span class="form-req">*</span> <?php echo $Reg['Reg']; ?></span>
-<h2 class="subcategory">CHARACTERS SETTINGS</h2>
+<h2 class="subcategory"><?php echo $name['2']; ?></h2>
 <?php
   $price = mysql_fetch_assoc(mysql_query("SELECT * FROM $server_db.prices WHERE service = 'name-change'"));
    if ($price['id']=='' || ($price['vp']==0 && $price['dp']==0)){
@@ -87,7 +87,7 @@ _gaq.push(['_trackPageLoadTime']);
    $free = 0;
   }
 ?>
-<h3 class="headline">Name Change
+<h3 class="headline"><?php echo $name['3']; ?>
 <?php
 if ($free!= 1 && ($price['vp'] > 0 || $price['dp'] > 0)){
   echo ' (';
@@ -104,9 +104,8 @@ if ($free!= 1 && ($price['vp'] > 0 || $price['dp'] > 0)){
 </h3>
 </div>
 <div id="page-content" class="page-content">
-<p><?php echo $Reg['Reg3']; ?><b><?php echo $Reg['Reg4']; ?></b> be offline for this tool to successfully work! Plus you need to be Loged to the 
-website. Your character should not have a change option activated.</p>
-<p>Remember that Change name is the less powerful tool, Customization and Race Change allows you to change your Name too.</p>
+<p><?php echo $Reg['Reg3']; ?><b><?php echo $Reg['Reg4']; ?></b><?php echo $name['4']; ?></p>
+<p><?php echo $name['5']; ?></p>
 <form autocomplete="off" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 <input type="hidden" name="csrftoken" value="" />
 <?php 
@@ -122,9 +121,9 @@ if(isset($_POST['submit']))
 		$method1="vote_points";
 		$method2="vote points";
 	}
-	
+
 	$buscarpuntos = mysql_fetch_array(mysql_query("SELECT * FROM $server_db.users WHERE id='".$account_information['id']."'"));
-	
+
 	$character = intval($_POST['character']);
 
 	$errors = Array();
@@ -134,7 +133,7 @@ if(isset($_POST['submit']))
 	$check = mysql_query("SELECT * FROM $server_cdb.characters WHERE guid = '".$character."' AND account = '".$account_information['id']."'");
 
 	if(empty($character) || mysql_num_rows($check) < 1) $errors[] = "You have not selected an eligible character for name change.";
-	
+
 	if ($buscarpuntos[$method1]<$price[$method]) $errors[] = "You dont have enough ".$method2;
 
 	if(count($errors) < 1){
@@ -161,7 +160,7 @@ else{
 ?>
 	<div class="form-row required">
 		<label for="firstname" class="label-full ">
-			<strong>Account Name</strong>
+			<strong><?php echo $name['6']; ?></strong>
 			<span class="form-required">*</span>
 		</label>
 		<input type="text" id="firstname" name="account" value="<?php echo strtolower($_SESSION['username']); ?>" class=" input border-5 glow-shadow-2 form-disabled" maxlength="16" tabindex="1" />
@@ -169,7 +168,7 @@ else{
 
 	<div class="form-row required">
 		<label for="character" class="label-full ">
-			<strong>Select a Character</strong>
+			<strong><?php echo $name['7']; ?></strong>
 			<span class="form-required">*</span>
 		</label>
 		
@@ -213,10 +212,10 @@ else{
 		elseif($online == 1) echo '*One of your characters is online<br><br><button class="ui-button button1 disabled" type="submit" name="submit" id="settings-submit" value="Continue" tabindex="1" disabled="disabled">';
     else echo '<button class="ui-button button1" type="submit" name="submit" id="settings-submit" value="Purchase" tabindex="1">';
 		?>
-		<span><span>Purchase</span></span>
+		<span><span><?php echo $name['8']; ?></span></span>
 		</button>
 		
-		<a class="ui-cancel" href="../account_man.php" tabindex="1"><span>Cancel</span></a>
+		<a class="ui-cancel" href="../account_man.php" tabindex="1"><span><?php echo $name['9']; ?></span></a>
 	</fieldset>
 
 </form>
@@ -236,13 +235,13 @@ var xsToken = 'b213c993-d61d-4957-9141-9da399fd7d54';
 var Msg = {
 support: {
 ticketNew: 'Ticket {0} was created.',
-ticketStatus: 'Ticket {0}’s status changed to {1}.',
+ticketStatus: 'Ticket {0}?s status changed to {1}.',
 ticketOpen: 'Open',
 ticketAnswered: 'Answered',
 ticketResolved: 'Resolved',
 ticketCanceled: 'Cancelled',
 ticketArchived: 'Archived',
-ticketInfo: 'Need Info',
+ticketInfo: 'Need Info',
 ticketAll: 'View All Tickets'
 },
 cms: {
@@ -280,10 +279,10 @@ urlPrompt: 'URL Address:'
 },
 ui: {
 viewInGallery: 'View in gallery',
-loading: 'Loading…',
+loading: 'Loading?',
 unexpectedError: 'An error has occurred',
-fansiteFind: 'Find this on…',
-fansiteFindType: 'Find {0} on…',
+fansiteFind: 'Find this on?',
+fansiteFindType: 'Find {0} on?',
 fansiteNone: 'No fansites available.'
 },
 grammar: {
