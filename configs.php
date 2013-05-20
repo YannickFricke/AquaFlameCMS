@@ -35,6 +35,7 @@ $server_wdb = "world";
 # Extra ################
 
 $website['realm'] = "Set Realmlist Your_Realmlist";
+$name_realm1['realm'] = "Realm_Name";
 $mysql_cod = 'cp1251';
 
 # Comunity Links ############
