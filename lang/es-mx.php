@@ -30,7 +30,7 @@ $Account5['Account5'] = "Seguridad de la cuenta";
 $Account6['Account6'] = "Gestiona tu cuenta";
 $Friends['Keepthem'] = "Manten a tus Amigos en el Juego.";
 
-$Support['Support'] = "ASISTENCIA";
+$Support['Support'] = "SOPORTE";
 $Support3['Support3'] = "Artículos de Asistencia";
 $Support4['Support4'] = "·Ayuda, me han pirateado!";
 $Support5['Support5'] = "Busca tus tickets de asistencia";
@@ -127,6 +127,8 @@ $Vote['Vote35'] = " minuto";
 $Vote['CanVoteIn'] = "Puedes votar en ";
 $Vote['Earned'] = "Ganados";
 $Vote['VotePanel'] = "Panel de votos";
+$Vote['Vote39'] = "¡Inicie sesión para votar ahora!";
+$Vote['Vote40'] = "¡Aprende más!";
 // Finishing the voting translation
 
 // Starting the register.php translation

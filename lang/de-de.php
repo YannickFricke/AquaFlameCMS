@@ -126,6 +126,8 @@ $Vote['Vote35']     = " Minute";
 $Vote['CanVoteIn']  = "Sie k&ouml;nnen abstimmen in ";
 $Vote['Earned']     = "Erhalten";
 $Vote['VotePanel']  = "Vote Panel";
+$Vote['Vote39'] = "Login to Vote now!";
+$Vote['Vote40'] = "Learn more!";
 // Finishing the voting translation
 
 // Starting the register.php translation
