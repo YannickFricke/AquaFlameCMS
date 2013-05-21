@@ -1,13 +1,13 @@
 <?php
 if(!isset($_SESSION['username'])){
     ?>
-    <div class="user-plate">
-        <a href="?login" onclick="return Login.open()" class="card-login">
-        <? echo $uplate['login']?>
-        </a>
-        
-        <div class="card-overlay"></div>
-    </div>
+<div class="user-plate">
+<a href="?login" class="card-character plate-logged-out" onclick="return Login.open()">
+<span class="card-portrait"></span>
+<span class="wow-login-key"></span>
+<span class="login-msg"><? echo $uplate['login']?></span>
+</a>
+</div>
     <?php 
 }else{
     $side = rand(1,2);
@@ -144,43 +144,46 @@ if(!isset($_SESSION['username'])){
     
 	?>
 <div class="user-plate">
-<div id="user-plate" class="card-character plate-<?php echo $side; ?> ajax-update" style="background: url(<?php echo $website['root']; ?>wow/static/images/2d/card/<?php echo $actualchar["race"] . "-" . $actualchar["gender"];?>.jpg) 0 100% no-repeat;">
-<div class="card-overlay"></div>
-<span class="hover"></span>
+<a id="user-plate" class="card-character plate-<?php echo $side; ?> ajax-update" rel="np" href="#"> <!--http://eu.battle.net/static-render/eu/twisting-nether/68/83271236-avatar.jpg?alt=/wow/static/images/2d/avatar/6-0.jpg-->
+<span class="card-portrait" style="background-image:url(<?php echo $website['root']; ?>wow/static/images/2d/avatar/<?php echo $actualchar["race"] . "-" . $actualchar["gender"];?>.jpg)"></span>
 </a>
+<div class="meta-wrapper meta-<?php echo $side; ?> ajax-update">
 <div class="meta">
 <div class="player-name"><?php echo $account_extra['firstName'].' '.$account_extra['lastName']; ?></div>
-	  
-	  <div class="character">
-	  <a class="character-name context-link" href="#" rel="np" data-tooltip="Change character"><?php echo $actualchar["name"]; ?><span class="arrow"></span></a>
-	  <div class="guild">
+<div class="character">
+<a class="character-name context-link " rel="np" href="#" data-tooltip="Change character" data-tooltip-options="{&quot;location&quot;: &quot;topCenter&quot;}">
+<?php echo $actualchar["name"]; ?>
+<span class="arrow"></span>
+</a>
+<div class="guild">
 <a class="guild-name" href="#">
 <?php echo $realm['name'] ?>
 </a>
 </div>
-		<div id="context-1" class="ui-context character-select">
-		
-		  <div class="context">
-			<a href="javascript:;" class="close" onclick="return CharSelect.close(this);"></a>
-			
-			<div class="context-user">
-			<strong><?php echo $actualchar["name"]; ?></strong>
-			<br />
-			<span class="realm up"><?php echo $realm['name'] ?></span>
-			</div>
-		  
-			<div class="context-links">
-			<a href="<?php echo $website['root'];?>advanced.php?name=<?php echo $actualchar["name"]; ?>" title="<? echo $uplate['profile']; ?>" class="icon-profile link-first"><? echo $uplate['profile']; ?></a>
-			<a href="#" title="<?php echo $uplate['post']; ?>" class="icon-posts"> </a>
-			<a href="#" title="<?php echo $uplate['auction']; ?>" rel="np"class="icon-auctions"> </a>
-			<a href="#" title="<?php echo $uplate['events']; ?>" rel="np" class="icon-events link-last"> </a>
-			</div>
-		  </div>
-          
-		  <div class="character-list">
-			<div class="primary chars-pane">
-                <div class="char-wrapper">
-                    <?php
+<div id="context-1" class="ui-context character-select">
+<div class="context">
+<a href="javascript:;" class="close" onclick="return CharSelect.close(this);"></a>
+<div class="context-user">
+<strong><?php echo $actualchar["name"]; ?></strong>
+<br />
+<span class="realm up"><?php echo $realm['name'] ?></span>
+</div>
+<div class="context-links">
+<a href="<?php echo $website['root'];?>advanced.php?name=<?php echo $actualchar["name"]; ?>" title="<? echo $uplate['profile']; ?>" rel="np" class="icon-profile link-first">
+<? echo $uplate['profile']; ?>
+</a>
+<a href="#" title="<?php echo $uplate['post']; ?>" rel="np" class="icon-posts">
+</a>
+<a href="#" title="<?php echo $uplate['auction']; ?>" rel="np" class="icon-auctions">
+</a>
+<a href="#" title="<?php echo $uplate['events']; ?>" rel="np" class="icon-events link-last">
+</a>
+</div>
+</div>
+<div class="character-list">
+<div class="primary chars-pane">
+<div class="char-wrapper">
+<?php
                    	
                     
                     $get_realms = mysql_query("SELECT * FROM $server_adb.realmlist ORDER BY `id` DESC");
@@ -219,99 +222,48 @@ if(!isset($_SESSION['username'])){
                         }
                     }
                     ?>
-                </div>
-                
-                <a href="#" class="manage-chars" onclick=""><!--CharSelect.swipe('in', this); return false;-->
-                    <span class="plus"></span>
-                    <?php echo $uplate['manage']; ?><br />
-                    <span><?php echo $uplate['customize']; ?></span>
-                </a>
-			</div>
-			<!--
-			<div class="secondary chars-pane" style="display: none">
-			<div class="char-wrapper scrollbar-wrapper" id="scroll">
-			<div class="scrollbar">
-			<div class="track"><div class="thumb"></div></div>
-			</div>
-			<div class="viewport">
-			<div class="overview">
-			<a href="javascript:;"
-			class="color-c1 pinned"
-			rel="np"
-			onmouseover="Tooltip.show(this, $(this).children('.hide').text());">
-			<img src="/wow/static/images/icons/race/2-0.gif" alt="" />
-			<img src="/wow/static/images/icons/class/1.gif" alt="" />
-			28 Aghman
-			<span class="hide">Orc Warrior (Burning Steppes)</span>
-			</a>
-			<a href="/wow/en/character/burning-steppes/stefyvolt/"
-			class="color-c2"
-			rel="np"
-			onclick="CharSelect.pin(1, this); return false;"
-			onmouseover="Tooltip.show(this, $(this).children('.hide').text());">
-			
-			<img src="/wow/static/images/icons/race/10-0.gif" alt="" />
-			<img src="/wow/static/images/icons/class/2.gif" alt="" />
-			80 Stefyvolt
-			<span class="hide">Blood Elf Paladin (Burning Steppes)</span>
-			</a>
-			<a href="/wow/en/character/burning-steppes/taylda/"
-			class="color-c6"
-			rel="np"
-			onclick="CharSelect.pin(2, this); return false;"
-			onmouseover="Tooltip.show(this, $(this).children('.hide').text());">
-			<img src="/wow/static/images/icons/race/10-1.gif" alt="" />
-			<img src="/wow/static/images/icons/class/6.gif" alt="" />
-			62 Taylda
-			<span class="hide">Blood Elf Death Knight (Burning Steppes)</span>
-			</a>
-			<a href="/wow/en/character/burning-steppes/stefybank/"
-			class="color-c1"
-			rel="np"
-			onclick="CharSelect.pin(3, this); return false;"
-			onmouseover="Tooltip.show(this, $(this).children('.hide').text());">
-			<img src="/wow/static/images/icons/race/6-0.gif" alt="" />
-			<img src="/wow/static/images/icons/class/1.gif" alt="" />
-			5 Stefybank
-			
-			<span class="hide">Tauren Warrior (Burning Steppes)</span>
-			</a>
-			<a href="/wow/en/character/arathi/pvpsausage/"
-			class="color-c7"
-			rel="np"
-			onclick="CharSelect.pin(4, this); return false;"
-			onmouseover="Tooltip.show(this, $(this).children('.hide').text());">
-			<img src="/wow/static/images/icons/race/2-0.gif" alt="" />
-			<img src="/wow/static/images/icons/class/7.gif" alt="" />
-			1 Pvpsausage
-			<span class="hide">Orc Shaman (Arathi)</span>
-			</a>
-			<a href="/wow/en/character/ragnaros/adenor/"
-			class="color-c6"
-			rel="np"
-			onclick="CharSelect.pin(5, this); return false;"
-			onmouseover="Tooltip.show(this, $(this).children('.hide').text());">
-			<img src="/wow/static/images/icons/race/11-0.gif" alt="" />
-			<img src="/wow/static/images/icons/class/6.gif" alt="" />
-			61 Adenor
-			<span class="hide">Draenei Death Knight (Ragnaros)</span>
-			</a>
-			
-			<div class="no-results hide">No characters were found</div>
-			</div>
-			</div>
-			</div>
-			<div class="filter">
-			<input type="input" class="input character-filter" value="Filter�" alt="Filter�" /><br />
-			<a href="javascript:;" onclick="CharSelect.swipe('out', this); return false;">Return to characters</a>
-			</div>
-			</div>
-			-->
-		  </div>
-		</div>
-	  </div>
-	</div>
-	</div>
+</div>
+<a href="javascript:;" class="manage-chars" onclick="CharSelect.swipe('in', this); return false;">
+<span class="plus"></span>
+<?php echo $uplate['manage']; ?><br />
+<span><?php echo $uplate['customize']; ?></span>
+</a>
+</div>
+<!--
+<div class="secondary chars-pane" style="display: none">
+<div class="char-wrapper scrollbar-wrapper" id="scroll" style="overflow: hidden;">
+<div class="scrollbar">
+<div class="track"><div class="thumb"></div></div>
+</div>
+<div class="viewport">
+<div class="overview">
+<a href="/wow/en/character/twisting-nether/Ricu/" class="wow-class-6 pinned" rel="np" data-tooltip="Tauren Death Knight (<?php echo $realm['name'] ?>)">
+<span class="icon-frame frame-14 ">
+<img src="/wow/static/local-common/images/wow/race/6-0.jpg" alt="" width="14" height="14" />
+<span class="frame"></span>
+</span>
+<span class="icon-frame frame-14 ">
+<img src="/wow/static/local-common/images/wow/class/6.jpg" alt="" width="14" height="14" />
+<span class="frame"></span>
+</span>
+90 Ricu
+</a>
+<div class="no-results hide">No characters were found</div>
+</div>
+</div>
+</div>
+<div class="filter">
+<input type="input" class="input character-filter" value="Filter…" alt="Filter…" /><br />
+<a href="javascript:;" onclick="CharSelect.swipe('out', this); return false;">Return to characters</a>
+</div>
+</div>-->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>	
+
 	<script type="text/javascript">
 
 	//<![CDATA[

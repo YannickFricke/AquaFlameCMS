@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `community_slides` (
   `date` date NOT NULL,
   `image` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.community_slides: ~4 rows (approximately)
 DELETE FROM `community_slides`;
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `answer` varchar(50) DEFAULT NULL COMMENT 'Answer of the Security Question',
   `name` varchar(50) DEFAULT NULL COMMENT 'User''s Name',
   `lastname` varchar(50) DEFAULT NULL COMMENT 'User''s Last Name'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.contacts: ~0 rows (approximately)
 DELETE FROM `contacts`;
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `forum_blizzposts` (
   `postid` int(10) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.forum_blizzposts: ~0 rows (approximately)
 DELETE FROM `forum_blizzposts`;
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `forum_categ` (
   `num` int(10) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.forum_categ: ~1 rows (approximately)
 DELETE FROM `forum_categ`;
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `forum_forums` (
   `description` text,
   `locked` smallint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.forum_forums: ~4 rows (approximately)
 DELETE FROM `forum_forums`;
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `forum_posts` (
   `type` int(2) NOT NULL DEFAULT '0',
   `postid` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.forum_posts: ~0 rows (approximately)
 DELETE FROM `forum_posts`;
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `forum_replies` (
   `editedby` int(10) NOT NULL DEFAULT '0',
   `last_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.forum_replies: ~0 rows (approximately)
 DELETE FROM `forum_replies`;
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `forum_threads` (
   `edited` int(1) NOT NULL DEFAULT '0',
   `editedby` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.forum_threads: ~0 rows (approximately)
 DELETE FROM `forum_threads`;
@@ -202,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `amount` float DEFAULT NULL,
   `info` blob,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.logs: ~0 rows (approximately)
 DELETE FROM `logs`;
@@ -300,7 +300,7 @@ CREATE TABLE IF NOT EXISTS `prices` (
   `vp` int(10) DEFAULT '0',
   `dp` int(10) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table website.prices: ~4 rows (approximately)
 DELETE FROM `prices`;
@@ -324,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `realms` (
   `drop_rate` varchar(5) NOT NULL DEFAULT '1x',
   `exp_rate` varchar(5) NOT NULL DEFAULT '1x',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table website.realms: ~1 rows (approximately)
 DELETE FROM `realms`;
@@ -351,7 +351,7 @@ CREATE TABLE IF NOT EXISTS `rewards` (
   `gold` int(10) unsigned NOT NULL,
   `price` float unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.rewards: ~0 rows (approximately)
 DELETE FROM `rewards`;
@@ -369,7 +369,7 @@ CREATE TABLE IF NOT EXISTS `servers` (
   `password` varchar(32) NOT NULL,
   `database` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.servers: ~0 rows (approximately)
 DELETE FROM `servers`;
@@ -385,7 +385,7 @@ CREATE TABLE IF NOT EXISTS `shouts` (
   `body` longtext,
   `date` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- Dumping data for table website.shouts: ~0 rows (approximately)
 DELETE FROM `shouts`;
@@ -448,7 +448,7 @@ CREATE TABLE IF NOT EXISTS `version` (
   `Revision` varchar(10) DEFAULT NULL,
   `DB_Version` varchar(50) DEFAULT NULL,
   `Updates` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='This here shows you what Version of WoWFailureCMS you have.';
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='This here shows you what Version of WoWFailureCMS you have.';
 
 -- Dumping data for table website.version: ~1 rows (approximately)
 DELETE FROM `version`;
@@ -465,7 +465,7 @@ CREATE TABLE IF NOT EXISTS `vote` (
   `Name` varchar(50) DEFAULT NULL COMMENT 'This is the Name of the Voting Site.',
   `Link` text COMMENT 'It must have http:// to work properly',
   `Description` text COMMENT 'Add the Description for the Voting'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='This Table is all about the Infortmation for the Vote Panel.';
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='This Table is all about the Infortmation for the Vote Panel.';
 
 -- Dumping data for table website.vote: ~0 rows (approximately)
 DELETE FROM `vote`;
@@ -480,7 +480,7 @@ CREATE TABLE IF NOT EXISTS `votes` (
   `userid` int(10) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `voteid` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table website.votes: ~0 rows (approximately)
 DELETE FROM `votes`;

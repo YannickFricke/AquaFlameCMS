@@ -1059,10 +1059,10 @@ $name['2'] = "CHARACTERS SETTINGS";
 $name['3'] = "Name Change";
 $name['4'] = " be offline for this tool to successfully work! Plus you need to be Loged to the website. Your character should not have a change option activated.";
 $name['5'] = "Remember that Change name is the less powerful tool, Customization and Race Change allows you to change your Name too.";
-$name['6'] = "Account Name"
-$name['7'] = "Select a Character"
-$name['8'] = "Purchase"
-$name['9'] = "Cancel"
+$name['6'] = "Account Name";
+$name['7'] = "Select a Character";
+$name['8'] = "Purchase";
+$name['9'] = "Cancel";
 //Finish Change Character Name
 
 //Start Change Character Race
